@@ -792,7 +792,7 @@ let FT=[mk(0),mk(1)];
 // game restores the snapshot taken before that frame and silently re-simulates up to the present (sound muted, nothing drawn
 // in between). The server only relays messages. Everything the sim touches is in the snapshot: F, hs, shk, FT, FP, PT, FX, BL,
 // FR, BZ, KG, KMK, PR, DPQ, S, HK + a seeded RNG (Math.random/sin/cos are swapped for deterministic versions while stepping).
-const SERVER_URL='wss://pixel-fighter-server.onrender.com/ws'; // <-- CHANGE THIS to your Render service: wss://<service-name>.onrender.com/ws
+const SERVER_URL='wss://pixelfighterrbnc.onrender.com/ws'; // <-- CHANGE THIS to your Render service: wss://<service-name>.onrender.com/ws
 const N={on:0,run:0,me:0,host:0,peer:0,link:0,hand:0,code:'',D:2,mid:0,ph:0,pend:null,want:0,sa:0,bye:'',ws:null,rs:[],pt:0},held=new Set(),KB=[['KeyA','ArrowLeft'],['KeyD','ArrowRight'],['KeyW','ArrowUp'],['KeyS','ArrowDown'],['ShiftLeft','Quote','Numpad5']];
 const $=id=>document.getElementById(id),say=t=>$('ns').textContent=t,nj=o=>{const w=N.ws;if(w&&w.readyState==1)w.send(JSON.stringify(o))};
 const lbits=()=>KB.reduce((a,k,i)=>a|(k.some(c=>held.has(c))<<i),0);
