@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pixel-fighter-server
+    runtime: node
+    region: singapore        # closest to you; pick the region nearest your players
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: ALLOWED_ORIGINS   # your Vercel URL, e.g. https://pixel-fighter.vercel.app (empty = allow any)
+        value: ""
